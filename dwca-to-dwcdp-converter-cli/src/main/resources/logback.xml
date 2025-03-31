@@ -1,0 +1,31 @@
+<configuration>
+
+  <property name="defaultPattern" value="%-5level [%date{'yyyy-MM-dd HH:mm:ss,SSSZ'}] [%thread] %logger: %msg%n%xEx"/>
+
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>${defaultPattern}</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>dwca_to_dwcdp_converter.log</file>
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>${defaultPattern}</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="org.gbif.dwc" level="ERROR" />
+  <logger name="org.gbif.dwcatodwcdp" level="DEBUG" />
+
+  <root>
+    <appender-ref ref="CONSOLE" />
+    <appender-ref ref="FILE" />
+    <appender-ref ref="FILE_DATASET_FOR_ORGANISM_SEQUENCED" />
+    <appender-ref ref="FILE_DATASET_FOR_EDNA" />
+    <appender-ref ref="FILE_DATASET_WITH_HOSTS" />
+  </root>
+
+</configuration>

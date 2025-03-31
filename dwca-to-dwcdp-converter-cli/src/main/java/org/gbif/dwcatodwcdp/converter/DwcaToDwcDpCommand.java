@@ -46,6 +46,8 @@ public class DwcaToDwcDpCommand extends BaseCommand {
 
   @Override
   protected void doRun() {
+    LOG.info("DwC-A to DwC DP converter started");
+
     if (config.dwcaFile == null) {
       LOG.error("You have to provide a DwC archive file to be converted. Exiting.");
       return;
