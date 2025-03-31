@@ -70,18 +70,11 @@
                 <exclude>META-INF/*.SF</exclude>
                 <exclude>META-INF/*.DSA</exclude>
                 <exclude>META-INF/*.RSA</exclude>
-                <exclude>application.yml</exclude>
+                <exclude>logback.xml</exclude>
               </excludes>
             </filter>
           </filters>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <version>${spring-boot.version}</version>
-          </dependency>
-        </dependencies>
         <executions>
           <execution>
             <phase>package</phase>
@@ -92,15 +85,8 @@
               <finalName>${project.artifactId}</finalName>
               <shadedArtifactAttached>true</shadedArtifactAttached>
               <transformers>
-                <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                  <resource>META-INF/spring.handlers</resource>
-                </transformer>
-                <transformer implementation="org.springframework.boot.maven.PropertiesMergingResourceTransformer">
-                  <resource>META-INF/spring.factories</resource>
-                </transformer>
-                <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                  <resource>META-INF/spring.schemas</resource>
-                </transformer>
+                <!-- This bit merges the various META-INF/services files -->
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
                 <!-- This bit sets the main class for the executable jar as you otherwise -->
                 <!-- would with the assembly plugin                                       -->
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
@@ -108,8 +94,6 @@
                     <Main-Class>org.gbif.cli.Application</Main-Class>
                   </manifestEntries>
                 </transformer>
-                <!-- This bit merges the various META-INF/services files         -->
-                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
               </transformers>
             </configuration>
           </execution>
