@@ -35,6 +35,7 @@
 
   <modules>
     <module>dwca-to-dwcdp-converter-cli</module>
+    <module>dwca-to-dwcdp-converter-common</module>
   </modules>
 
   <properties>
@@ -45,6 +46,7 @@
     <gbif-cli.version>2.0.0</gbif-cli.version>
     <dwc-api.version>2.0.0</dwc-api.version>
     <dwca-io.version>3.0.0</dwca-io.version>
+    <dwca-to-dwcdp-converter.version>1.0-SNAPSHOT</dwca-to-dwcdp-converter.version>
     <metainf-services.version>1.11</metainf-services.version>
     <logback.version>1.2.13</logback.version>
     <slf4j.version>1.7.36</slf4j.version>
@@ -67,6 +69,11 @@
         <groupId>org.gbif</groupId>
         <artifactId>dwc-api</artifactId>
         <version>${dwc-api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.gbif.dwcatodwcdp.converter</groupId>
+        <artifactId>dwca-to-dwcdp-converter-common</artifactId>
+        <version>${dwca-to-dwcdp-converter.version}</version>
       </dependency>
 
       <dependency>
