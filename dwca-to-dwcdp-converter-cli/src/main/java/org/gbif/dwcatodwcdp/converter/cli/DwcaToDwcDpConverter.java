@@ -11,19 +11,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gbif.dwcatodwcdp.converter;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package org.gbif.dwcatodwcdp.converter.cli;
 
 import java.io.File;
 
-public class DwcaToDwcDpConverterImpl implements DwcaToDwcDpConverter {
+public interface DwcaToDwcDpConverter {
 
-  private static final Logger LOG = LoggerFactory.getLogger(DwcaToDwcDpConverterImpl.class);
-
-  @Override
-  public void convert(File dwcaFile, File dwcDpOutputDirectory) {
-    LOG.info("Converting a DwC archive to a DWC DP");
-  }
+  void convert(File dwcaFile, File dwcDpOutputDirectory);
 }

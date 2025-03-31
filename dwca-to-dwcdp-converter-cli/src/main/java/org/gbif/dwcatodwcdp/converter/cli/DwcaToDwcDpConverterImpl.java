@@ -11,25 +11,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gbif.dwcatodwcdp.converter;
+package org.gbif.dwcatodwcdp.converter.cli;
 
-import com.beust.jcommander.Parameter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.StringJoiner;
+import java.io.File;
 
-public class DwcaToDwcDpConfiguration {
+public class DwcaToDwcDpConverterImpl implements DwcaToDwcDpConverter {
 
-  @Parameter(names = {"--dwca-file", "--dwca"})
-  public String dwcaFile;
-
-  @Parameter(names = {"--dwc-dp-output-dir", "--dwcdp"})
-  public String dwcDpOutputDir;
+  private static final Logger LOG = LoggerFactory.getLogger(DwcaToDwcDpConverterImpl.class);
 
   @Override
-  public String toString() {
-    return new StringJoiner(", ", DwcaToDwcDpConfiguration.class.getSimpleName() + "[", "]")
-        .add("dwcaFile='" + dwcaFile + "'")
-        .add("dwcDpOutputDir='" + dwcDpOutputDir + "'")
-        .toString();
+  public void convert(File dwcaFile, File dwcDpOutputDirectory) {
+    LOG.info("Converting a DwC archive to a DWC DP");
   }
 }
