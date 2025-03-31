@@ -15,6 +15,8 @@ package org.gbif.dwcatodwcdp.converter.cli;
 
 import org.gbif.cli.BaseCommand;
 import org.gbif.cli.Command;
+import org.gbif.dwcatodwcdp.converter.DwcaToDwcDpConverter;
+import org.gbif.dwcatodwcdp.converter.DwcaToDwcDpConverterImpl;
 import org.kohsuke.MetaInfServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
