@@ -25,11 +25,15 @@ public class DwcaToDwcDpConfiguration {
   @Parameter(names = {"--dwc-dp-output-dir", "--dwcdp"})
   public String dwcDpOutputDir;
 
+  @Parameter(names = {"--dwca-to-dwc-dp-mappings", "--mappings"})
+  public String dwcaToDwcDpMappings;
+
   @Override
   public String toString() {
     return new StringJoiner(", ", DwcaToDwcDpConfiguration.class.getSimpleName() + "[", "]")
         .add("dwcaFile='" + dwcaFile + "'")
         .add("dwcDpOutputDir='" + dwcDpOutputDir + "'")
+        .add("dwcaToDwcDpMappings='" + dwcaToDwcDpMappings + "'")
         .toString();
   }
 }
