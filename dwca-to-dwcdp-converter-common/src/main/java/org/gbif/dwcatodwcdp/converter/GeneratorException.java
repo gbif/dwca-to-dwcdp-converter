@@ -13,9 +13,21 @@
  */
 package org.gbif.dwcatodwcdp.converter;
 
-import java.io.File;
+/**
+ * Exception thrown when generating a dwc archive fails.
+ */
+public class GeneratorException extends Exception {
 
-public interface DwcaToDwcDpConverter {
+  public GeneratorException(String message) {
+    super(message);
+  }
 
-  void convert(File dwcaFile, File dwcDpOutputDirectory, File dwcaToDwcDpMappingsDirectory);
+  public GeneratorException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public GeneratorException(Throwable cause) {
+    super(cause);
+  }
+
 }

@@ -17,11 +17,12 @@ import org.gbif.cli.BaseCommand;
 import org.gbif.cli.Command;
 import org.gbif.dwcatodwcdp.converter.DwcaToDwcDpConverter;
 import org.gbif.dwcatodwcdp.converter.DwcaToDwcDpConverterImpl;
+
+import java.io.File;
+
 import org.kohsuke.MetaInfServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.File;
 
 @MetaInfServices(Command.class)
 public class DwcaToDwcDpCommand extends BaseCommand {
@@ -34,6 +35,7 @@ public class DwcaToDwcDpCommand extends BaseCommand {
   public DwcaToDwcDpCommand() {
     super("dwca-to-dwcdp-converter");
     this.config = new DwcaToDwcDpConfiguration();
+    this.converter = new DwcaToDwcDpConverterImpl();
   }
 
   public DwcaToDwcDpCommand(DwcaToDwcDpConfiguration config) {
@@ -60,9 +62,12 @@ public class DwcaToDwcDpCommand extends BaseCommand {
       return;
     }
 
-    converter = new DwcaToDwcDpConverterImpl();
+    if (config.dwcaToDwcDpMappings == null) {
+      LOG.error("You have to provide a directory with DwC-A to DwC DP mappings. Exiting.");
+      return;
+    }
 
     // TODO: check they are actual files?
-    converter.convert(new File(config.dwcaFile), new File(config.dwcDpOutputDir));
+    converter.convert(new File(config.dwcaFile), new File(config.dwcDpOutputDir), new File(config.dwcaToDwcDpMappings));
   }
 }

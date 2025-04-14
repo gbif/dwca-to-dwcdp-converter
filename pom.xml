@@ -10,7 +10,6 @@
     <version>59</version>
   </parent>
 
-  <groupId>org.gbif.dwcatodwcdp.converter</groupId>
   <artifactId>dwca-to-dwcdp-converter</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
@@ -44,13 +43,17 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <gbif-cli.version>2.0.0</gbif-cli.version>
+    <gbif-common-datapackage.version>1.0-SNAPSHOT</gbif-common-datapackage.version>
     <dwc-api.version>2.0.0</dwc-api.version>
     <dwca-io.version>3.0.0</dwca-io.version>
     <dwca-to-dwcdp-converter.version>1.0-SNAPSHOT</dwca-to-dwcdp-converter.version>
+    <jackson.version>2.15.1</jackson.version>
     <metainf-services.version>1.11</metainf-services.version>
     <logback.version>1.2.13</logback.version>
+    <lombok.version>1.18.20</lombok.version>
     <slf4j.version>1.7.36</slf4j.version>
-    <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
+    <frictionless.datapackage-java.version>0.6.16.1-gbif</frictionless.datapackage-java.version>
+    <frictionless.tableschema-java.version>0.6.16.3-gbif-SNAPSHOT</frictionless.tableschema-java.version>
   </properties>
 
   <dependencyManagement>
@@ -71,15 +74,44 @@
         <version>${dwc-api.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.gbif.dwcatodwcdp.converter</groupId>
+        <groupId>org.gbif</groupId>
+        <artifactId>gbif-common-datapackage</artifactId>
+        <version>${gbif-common-datapackage.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.gbif</groupId>
         <artifactId>dwca-to-dwcdp-converter-common</artifactId>
         <version>${dwca-to-dwcdp-converter.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.frictionlessdata</groupId>
+        <artifactId>datapackage-java</artifactId>
+        <version>${frictionless.datapackage-java.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.frictionlessdata</groupId>
+        <artifactId>tableschema-java</artifactId>
+        <version>${frictionless.tableschema-java.version}</version>
       </dependency>
 
       <dependency>
         <groupId>org.kohsuke.metainf-services</groupId>
         <artifactId>metainf-services</artifactId>
         <version>${metainf-services.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
