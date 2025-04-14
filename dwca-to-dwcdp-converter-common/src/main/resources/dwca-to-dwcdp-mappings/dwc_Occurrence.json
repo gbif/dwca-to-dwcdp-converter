@@ -1,0 +1,470 @@
+{
+  "dwc:institutionID": {
+    "resource": "material",
+    "field": "institutionID"
+  },
+  "dwc:collectionID": {
+    "resource": "material",
+    "field": "collectionID"
+  },
+  "dwc:datasetID": {
+    "resource": "event",
+    "field": "datasetID"
+  },
+  "dwc:institutionCode": {
+    "resource": "material",
+    "field": "institutionCode"
+  },
+  "dwc:collectionCode": {
+    "resource": "material",
+    "field": "collectionCode"
+  },
+  "dwc:datasetName": {
+    "resource": "event",
+    "field": "datasetName"
+  },
+  "dwc:ownerInstitutionCode": {
+    "resource": "material",
+    "field": "ownerInstitutionCode"
+  },
+  "dwc:informationWithheld": {
+    "resource": "occurrence",
+    "field": "informationWithheld"
+  },
+  "dwc:dataGeneralizations": {
+    "resource": "occurrence",
+    "field": "dataGeneralizations"
+  },
+  "dwc:occurrenceID": {
+    "resource": "occurrence",
+    "field": "occurrenceID"
+  },
+  "dwc:catalogNumber": {
+    "resource": "material",
+    "field": "catalogNumber"
+  },
+  "dwc:recordNumber": {
+    "resource": "material",
+    "field": "recordNumber"
+  },
+  "dwc:organismQuantity": {
+    "resource": "occurrence",
+    "field": "organismQuantity"
+  },
+  "dwc:organismQuantityType": {
+    "resource": "occurrence",
+    "field": "organismQuantityType"
+  },
+  "dwc:sex": {
+    "resource": "occurrence",
+    "field": "sex"
+  },
+  "dwc:lifeStage": {
+    "resource": "occurrence",
+    "field": "lifeStage"
+  },
+  "dwc:reproductiveCondition": {
+    "resource": "occurrence",
+    "field": "reproductiveCondition"
+  },
+  "dwc:caste": {
+    "resource": "occurrence",
+    "field": "caste"
+  },
+  "dwc:behavior": {
+    "resource": "occurrence",
+    "field": "behavior"
+  },
+  "dwc:vitality": {
+    "resource": "occurrence",
+    "field": "vitality"
+  },
+  "dwc:establishmentMeans": {
+    "resource": "occurrence",
+    "field": "establishmentMeans"
+  },
+  "dwc:degreeOfEstablishment": {
+    "resource": "occurrence",
+    "field": "degreeOfEstablishment"
+  },
+  "dwc:pathway": {
+    "resource": "occurrence",
+    "field": "pathway"
+  },
+  "dwc:georeferenceVerificationStatus": {
+    "resource": "event",
+    "field": "georeferenceVerificationStatus"
+  },
+  "dwc:occurrenceStatus": {
+    "resource": "occurrence",
+    "field": "occurrenceStatus"
+  },
+  "dwc:otherCatalogNumbers": {
+    "resource": "material",
+    "field": "otherCatalogNumbers"
+  },
+  "dwc:occurrenceRemarks": {
+    "resource": "occurrence",
+    "field": "occurrenceRemarks"
+  },
+  "dwc:organismID": {
+    "resource": "occurrence",
+    "field": "organismID"
+  },
+  "dwc:organismName": {
+    "resource": "occurrence",
+    "field": "organismName"
+  },
+  "dwc:organismScope": {
+    "resource": "occurrence",
+    "field": "organismScope"
+  },
+  "dwc:organismRemarks": {
+    "resource": "occurrence",
+    "field": "organismRemarks"
+  },
+  "dwc:materialEntityID": {
+    "resource": "material",
+    "field": "materialEntityID"
+  },
+  "dwc:eventID": {
+    "resource": "occurrence",
+    "field": "eventID"
+  },
+  "dwc:preparations": {
+    "resource": "material",
+    "field": "preparations"
+  },
+  "dwc:disposition": {
+    "resource": "material",
+    "field": "disposition"
+  },
+  "dwc:verbatimLabel": {
+    "resource": "material",
+    "field": "verbatimLabel"
+  },
+  "dwc:materialEntityRemarks": {
+    "resource": "material",
+    "field": "materialEntityRemarks"
+  },
+  "dwc:parentEventID": {
+    "resource": "event",
+    "field": "parentEventID"
+  },
+  "dwc:eventType": {
+    "resource": "event",
+    "field": "eventType"
+  },
+  "dwc:fieldNumber": {
+    "resource": "event",
+    "field": "fieldNumber"
+  },
+  "dwc:eventDate": {
+    "resource": "event",
+    "field": "eventDate"
+  },
+  "dwc:eventTime": {
+    "resource": "event",
+    "field": "eventTime"
+  },
+  "dwc:startDayOfYear": {
+    "resource": "event",
+    "field": "startDayOfYear"
+  },
+  "dwc:endDayOfYear": {
+    "resource": "event",
+    "field": "endDayOfYear"
+  },
+  "dwc:year": {
+    "resource": "event",
+    "field": "year"
+  },
+  "dwc:month": {
+    "resource": "event",
+    "field": "month"
+  },
+  "dwc:day": {
+    "resource": "event",
+    "field": "day"
+  },
+  "dwc:verbatimEventDate": {
+    "resource": "event",
+    "field": "verbatimEventDate"
+  },
+  "dwc:habitat": {
+    "resource": "event",
+    "field": "habitat"
+  },
+  "dwc:sampleSizeValue": {
+    "resource": "event",
+    "field": "sampleSizeValue"
+  },
+  "dwc:sampleSizeUnit": {
+    "resource": "event",
+    "field": "sampleSizeUnit"
+  },
+  "dwc:samplingEffort": {
+    "resource": "event",
+    "field": "eventEffort"
+  },
+  "dwc:fieldNotes": {
+    "resource": "event",
+    "field": "fieldNotes"
+  },
+  "dwc:eventRemarks": {
+    "resource": "event",
+    "field": "eventRemarks"
+  },
+  "dwc:locationID": {
+    "resource": "event",
+    "field": "locationID"
+  },
+  "dwc:higherGeographyID": {
+    "resource": "event",
+    "field": "higherGeographyID"
+  },
+  "dwc:higherGeography": {
+    "resource": "event",
+    "field": "higherGeography"
+  },
+  "dwc:continent": {
+    "resource": "event",
+    "field": "continent"
+  },
+  "dwc:waterBody": {
+    "resource": "event",
+    "field": "waterBody"
+  },
+  "dwc:islandGroup": {
+    "resource": "event",
+    "field": "islandGroup"
+  },
+  "dwc:island": {
+    "resource": "event",
+    "field": "island"
+  },
+  "dwc:country": {
+    "resource": "event",
+    "field": "country"
+  },
+  "dwc:countryCode": {
+    "resource": "event",
+    "field": "countryCode"
+  },
+  "dwc:stateProvince": {
+    "resource": "event",
+    "field": "stateProvince"
+  },
+  "dwc:county": {
+    "resource": "event",
+    "field": "county"
+  },
+  "dwc:municipality": {
+    "resource": "event",
+    "field": "municipality"
+  },
+  "dwc:locality": {
+    "resource": "event",
+    "field": "locality"
+  },
+  "dwc:verbatimLocality": {
+    "resource": "event",
+    "field": "verbatimLocality"
+  },
+  "dwc:minimumElevationInMeters": {
+    "resource": "event",
+    "field": "minimumElevationInMeters"
+  },
+  "dwc:maximumElevationInMeters": {
+    "resource": "event",
+    "field": "maximumElevationInMeters"
+  },
+  "dwc:verbatimElevation": {
+    "resource": "event",
+    "field": "verbatimElevation"
+  },
+  "dwc:verticalDatum": {
+    "resource": "event",
+    "field": "verticalDatum"
+  },
+  "dwc:minimumDepthInMeters": {
+    "resource": "event",
+    "field": "minimumDepthInMeters"
+  },
+  "dwc:maximumDepthInMeters": {
+    "resource": "event",
+    "field": "maximumDepthInMeters"
+  },
+  "dwc:verbatimDepth": {
+    "resource": "event",
+    "field": "verbatimDepth"
+  },
+  "dwc:minimumDistanceAboveSurfaceInMeters": {
+    "resource": "event",
+    "field": "minimumDistanceAboveSurfaceInMeters"
+  },
+  "dwc:maximumDistanceAboveSurfaceInMeters": {
+    "resource": "event",
+    "field": "maximumDistanceAboveSurfaceInMeters"
+  },
+  "dwc:locationAccordingTo": {
+    "resource": "event",
+    "field": "locationAccordingTo"
+  },
+  "dwc:locationRemarks": {
+    "resource": "event",
+    "field": "locationRemarks"
+  },
+  "dwc:decimalLatitude": {
+    "resource": "event",
+    "field": "decimalLatitude"
+  },
+  "dwc:decimalLongitude": {
+    "resource": "event",
+    "field": "decimalLongitude"
+  },
+  "dwc:geodeticDatum": {
+    "resource": "event",
+    "field": "geodeticDatum"
+  },
+  "dwc:coordinateUncertaintyInMeters": {
+    "resource": "event",
+    "field": "coordinateUncertaintyInMeters"
+  },
+  "dwc:coordinatePrecision": {
+    "resource": "event",
+    "field": "coordinatePrecision"
+  },
+  "dwc:pointRadiusSpatialFit": {
+    "resource": "event",
+    "field": "pointRadiusSpatialFit"
+  },
+  "dwc:verbatimCoordinates": {
+    "resource": "event",
+    "field": "verbatimCoordinates"
+  },
+  "dwc:verbatimLatitude": {
+    "resource": "event",
+    "field": "verbatimLatitude"
+  },
+  "dwc:verbatimLongitude": {
+    "resource": "event",
+    "field": "verbatimLongitude"
+  },
+  "dwc:verbatimCoordinateSystem": {
+    "resource": "event",
+    "field": "verbatimCoordinateSystem"
+  },
+  "dwc:verbatimSRS": {
+    "resource": "event",
+    "field": "verbatimSRS"
+  },
+  "dwc:footprintWKT": {
+    "resource": "event",
+    "field": "footprintWKT"
+  },
+  "dwc:footprintSRS": {
+    "resource": "event",
+    "field": "footprintSRS"
+  },
+  "dwc:footprintSpatialFit": {
+    "resource": "event",
+    "field": "footprintSpatialFit"
+  },
+  "dwc:georeferencedBy": {
+    "resource": "event",
+    "field": "georeferencedBy"
+  },
+  "dwc:georeferencedDate": {
+    "resource": "event",
+    "field": "georeferencedDate"
+  },
+  "dwc:georeferenceProtocol": {
+    "resource": "event",
+    "field": "georeferenceProtocol"
+  },
+  "dwc:georeferenceSources": {
+    "resource": "event",
+    "field": "georeferenceSources"
+  },
+  "dwc:georeferenceRemarks": {
+    "resource": "event",
+    "field": "georeferenceRemarks"
+  },
+  "dwc:geologicalContextID": {
+    "resource": "geological-context",
+    "field": "geologicalContextID"
+  },
+  "dwc:earliestEonOrLowestEonothem": {
+    "resource": "geological-context",
+    "field": "earliestEonOrLowestEonothem"
+  },
+  "dwc:latestEonOrHighestEonothem": {
+    "resource": "geological-context",
+    "field": "latestEonOrHighestEonothem"
+  },
+  "dwc:earliestEraOrLowestErathem": {
+    "resource": "geological-context",
+    "field": "earliestEraOrLowestErathem"
+  },
+  "dwc:latestEraOrHighestErathem": {
+    "resource": "geological-context",
+    "field": "latestEraOrHighestErathem"
+  },
+  "dwc:earliestPeriodOrLowestSystem": {
+    "resource": "geological-context",
+    "field": "earliestPeriodOrLowestSystem"
+  },
+  "dwc:latestPeriodOrHighestSystem": {
+    "resource": "geological-context",
+    "field": "latestPeriodOrHighestSystem"
+  },
+  "dwc:earliestEpochOrLowestSeries": {
+    "resource": "geological-context",
+    "field": "earliestEpochOrLowestSeries"
+  },
+  "dwc:latestEpochOrHighestSeries": {
+    "resource": "geological-context",
+    "field": "latestEpochOrHighestSeries"
+  },
+  "dwc:earliestAgeOrLowestStage": {
+    "resource": "geological-context",
+    "field": "earliestAgeOrLowestStage"
+  },
+  "dwc:latestAgeOrHighestStage": {
+    "resource": "geological-context",
+    "field": "latestAgeOrHighestStage"
+  },
+  "dwc:lowestBiostratigraphicZone": {
+    "resource": "geological-context",
+    "field": "lowestBiostratigraphicZone"
+  },
+  "dwc:highestBiostratigraphicZone": {
+    "resource": "geological-context",
+    "field": "highestBiostratigraphicZone"
+  },
+  "dwc:lithostratigraphicTerms": {
+    "resource": "geological-context",
+    "field": "lithostratigraphicTerms"
+  },
+  "dwc:group": {
+    "resource": "geological-context",
+    "field": "group"
+  },
+  "dwc:formation": {
+    "resource": "geological-context",
+    "field": "formation"
+  },
+  "dwc:member": {
+    "resource": "geological-context",
+    "field": "member"
+  },
+  "dwc:bed": {
+    "resource": "geological-context",
+    "field": "bed"
+  },
+  "dwc:identificationID": {
+    "resource": "identification",
+    "field": "identificationID"
+  }
+}
