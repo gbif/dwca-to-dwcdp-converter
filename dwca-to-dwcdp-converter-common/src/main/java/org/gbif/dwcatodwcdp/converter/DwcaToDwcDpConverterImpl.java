@@ -148,7 +148,9 @@ public class DwcaToDwcDpConverterImpl implements DwcaToDwcDpConverter {
       String termPrefixedName = term.prefixedName();
       DwcaToDwcDpTermMapping termMapping = dwcaToDwcDpMapping.getMapping(termPrefixedName);
 
-      if (termMapping != null) {
+      if (termMapping == null) {
+        LOG.warn("DwC-A to DwC dp term mapping wasn't found for the term [{}]", termPrefixedName);
+      } else {
         LOG.debug("Successfully found DwC-A to DwC DP term mapping for the term [{}]. Mapping: {}", term, termMapping);
 
         ArchiveField field = core.getField(term);
@@ -177,8 +179,6 @@ public class DwcaToDwcDpConverterImpl implements DwcaToDwcDpConverter {
 
         // store mapping
         dataMappings.putIfAbsent(tableSchemaName, dataPackageMapping);
-      } else {
-        LOG.error("DwC-A to DwC dp term mapping wasn't found for the term [{}]", termPrefixedName);
       }
     }
   }
