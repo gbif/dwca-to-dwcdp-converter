@@ -25,6 +25,8 @@ public class DwcaToDwcDpMappingManagerImpl implements DwcaToDwcDpMappingManager 
 
   private static final Logger LOG = LoggerFactory.getLogger(DwcaToDwcDpMappingManagerImpl.class);
 
+  private final ObjectMapper jsonMapper = new ObjectMapper();
+
   @Override
   public File getMappingFile(String rowType,  File dwcaToDwcDpMappingsDirectory) {
     String mappingFileName = toUnderscoreName(rowType);
@@ -45,9 +47,8 @@ public class DwcaToDwcDpMappingManagerImpl implements DwcaToDwcDpMappingManager 
       return null;
     }
 
-    ObjectMapper mapper = new ObjectMapper();
     try {
-      return mapper.readValue(mappingFile, DwcaToDwcDpTypeMapping.class);
+      return jsonMapper.readValue(mappingFile, DwcaToDwcDpTypeMapping.class);
     } catch (Exception e) {
       LOG.error("Error parsing mapping file: {}", mappingFile, e);
       return null;
