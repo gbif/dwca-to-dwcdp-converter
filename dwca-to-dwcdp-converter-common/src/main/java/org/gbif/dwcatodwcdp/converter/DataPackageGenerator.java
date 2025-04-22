@@ -28,6 +28,9 @@ import org.gbif.utils.file.ClosableReportingIterator;
 import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -85,6 +88,8 @@ public class DataPackageGenerator {
   private Map<String, DataPackageMapping> dataPackageMappings = new HashMap<>();
   @Setter
   private File dwcDpOutputDirectory;
+  @Setter
+  private File eml;
   private DataPackageMetadata dataPackageMetadata;
 
   // TODO: make sure it is used
@@ -196,7 +201,7 @@ public class DataPackageGenerator {
       // create zip
       zip = tmpFile("datapackage", ".zip");
 
-      dataPackage.write(zip, true);
+      dataPackage.write(zip, this::writeEMLMetadata, true);
 
       if (!zip.exists()) {
         throw new GeneratorException("Archive bundling failed: temp archive not created: " + zip.getAbsolutePath());
@@ -210,7 +215,18 @@ public class DataPackageGenerator {
     LOG.info("Archive has been compressed");
   }
 
-  // TODO: eml.xml is wrong!
+  /**
+   * Apart from a standard frictionless metadata, DwCA v2 occurrence must contain a EML file.
+   */
+  private void writeEMLMetadata(Path outputDir) {
+    Path target = outputDir.getFileSystem().getPath("eml.xml");
+    try {
+      Path sourcePath = eml.toPath();
+      Files.copy(sourcePath, target, StandardCopyOption.REPLACE_EXISTING);
+    } catch (IOException e) {
+      LOG.error("Failed to write eml.xml", e);
+    }
+  }
 
   /**
    * Sets only the state of the worker. The final StatusReport is generated at the end.

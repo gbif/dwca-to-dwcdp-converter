@@ -92,6 +92,7 @@ public class DwcaToDwcDpConverterImpl implements DwcaToDwcDpConverter {
     }
 
     ArchiveFile core = dwca.getCore();
+    File eml = dwca.getMetadataLocationFile();
     Set<ArchiveFile> extensions = dwca.getExtensions();
 
     LOG.debug("Core file: {}", core);
@@ -105,6 +106,7 @@ public class DwcaToDwcDpConverterImpl implements DwcaToDwcDpConverter {
     packageGenerator.setDataPackageSchema(dataPackageSchema);
     packageGenerator.setDataPackageMappings(dataMappings);
     packageGenerator.setDwcDpOutputDirectory(dwcDpOutputDirectory);
+    packageGenerator.setEml(eml);
 
     // generate data package
     try {
