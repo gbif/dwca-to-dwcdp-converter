@@ -50,6 +50,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
 import io.frictionlessdata.datapackage.JSONBase;
 import io.frictionlessdata.datapackage.Profile;
 import io.frictionlessdata.datapackage.resource.FilebasedResource;
@@ -70,10 +73,12 @@ public class DataPackageGenerator {
   private static final Random RANDOM = new Random();
   private static final String DWC_DP_IDENTIFIER = "http://rs.gbif.org/data-packages/dwc-dp";
 
+  private ObjectMapper objectMapper = new ObjectMapper();
   private STATE state = STATE.WAITING;
   private Exception exception;
   private File dataPackageFolder;
   private io.frictionlessdata.datapackage.Package dataPackage;
+  private String dataPackageFileName;
   private int currRecords = 0;
   private int currRecordsSkipped = 0;
   @Setter
@@ -118,6 +123,8 @@ public class DataPackageGenerator {
       // validation is a part of frictionless datapackage generation
       // zip archive and copy to resource folder
       bundleArchive();
+
+      writeMappings();
 
       // reporting
       LOG.info("Archive generated successfully");
@@ -196,10 +203,11 @@ public class DataPackageGenerator {
    */
   private void bundleArchive() throws Exception {
     setState(STATE.BUNDLING);
-    File zip = null;
+    File zip;
     try {
       // create zip
       zip = tmpFile("datapackage", ".zip");
+      dataPackageFileName = zip.getName();
 
       dataPackage.write(zip, this::writeEMLMetadata, true);
 
@@ -213,6 +221,23 @@ public class DataPackageGenerator {
     }
     // final reporting
     LOG.info("Archive has been compressed");
+  }
+
+  private void writeMappings() throws IOException {
+    File mappingsDirectory = new File(dwcDpOutputDirectory, "mappings-" + dataPackageFileName.replace(".zip", ""));
+    mappingsDirectory.mkdirs();
+
+    for (Map.Entry<String, DataPackageMapping> entry : dataPackageMappings.entrySet()) {
+      String key = entry.getKey();
+      DataPackageMapping value = entry.getValue();
+
+      // Make filename safe if needed (e.g., remove special characters)
+      String safeFileName = key.replaceAll("[^a-zA-Z0-9\\-_.]", "_");
+
+      File file = new File(mappingsDirectory, safeFileName + ".json");
+      objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+      objectMapper.writeValue(file, value.getFields());
+    }
   }
 
   /**
